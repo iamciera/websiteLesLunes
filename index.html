@@ -19,18 +19,20 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />
 
-    <style>
-      #map-container { height: 300px }
+<!-- style for map -->
+   <style>
+      body { }
+      #map-outer {  height: 440px; 
+	  				padding: 20px; 
+					border: 0px solid #CCC; 
+					margin-bottom: 20px; 
+					background-color:#FFF }
+	  #map-container { height: 400px }
+	  @media all and (max-width: 991px) {
+		#map-outer  { height: 650px }
+		}
     </style>
-
-    <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+ <!-- style for map-->
   </head>
 
   <body data-spy="scroll" data-offset="0" data-target="#theMenu">
@@ -69,7 +71,7 @@
 	<div id="aboutwrap">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 name-desc">
+				<div class="col-lg-12">
 					<h2>ABOUT</h2>
 					
 					<div class="col-md-6">
@@ -92,7 +94,7 @@
 	<div id="aboutwrap">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 name-desc">
+				<div class="col-lg-12">
 					<center><h2>WHO WE ARE</h2></center>
 				</div>
 				<div class="col-md-12">
@@ -112,7 +114,6 @@
 					</div>
 					
 				</div><! --/col-lg-8-->
-		
 			</div><!-- /row -->
 		</div><!-- /container -->
 	</div><!-- /aboutwrap -->
@@ -251,11 +252,34 @@
 
 <!-- Map -->
 
-<div class="container">
-  	<div class="row">
-		<div id="map-container" class="col-lg-12"></div>
- 	</div>
-</div>
+ <div class="container">
+  <div class="row">
+      <div id="map-outer" class="col-md-12">
+          <div id="address" class="col-md-4">
+            <h2>Where to buy</h2>
+            <address>
+            <strong>Arlequin Wine Merchant</strong><br>
+            	384 Hayes Street, San Francisco, CA 94102<br/>
+                <abbr>P:</abbr> +1 415-863-1104
+           </address>
+           <address>
+            <strong>Terrior</strong><br>
+            	1116 Folsom Street, San Francisco, CA 94103<br/>
+                <abbr>P:</abbr> +1 415-863-1104
+           </address>
+           <address>
+            <strong>Terrior</strong><br>
+                <abbr>P:</abbr> +1 415 558-9946
+           </address>
+           <address>
+            <strong>Terrior</strong><br>
+                <abbr>P:</abbr> +1 415-863-1104
+           </address>
+          </div>
+        <div id="map-container" class="col-md-8"></div>
+      </div><!-- /map-outer -->
+  </div> <!-- /row -->
+
 		    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		    <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -265,17 +289,21 @@
 		    <script>	
 		 
 		      function init_map() {
-				var var_location = new google.maps.LatLng(45.430817,12.331516);
+				var var_location = new google.maps.LatLng(37.796085, -122.357461);
+
+				var var_arlequin = new google.maps.LatLng(37.783876, -122.422693);
+
+				var var_terrior = new google.maps.LatLng(37.776566, -122.408480);
 		 
 		        var var_mapoptions = {
 		          center: var_location,
-		          zoom: 14
+		          zoom: 12
 		        };
 		 
 				var var_marker = new google.maps.Marker({
-					position: var_location,
+					position: var_arlequin,
 					map: var_map,
-					title:"Venice"});
+					title:"Arlequin"});
 		 
 		        var var_map = new google.maps.Map(document.getElementById("map-container"),
 		            var_mapoptions);
@@ -288,6 +316,7 @@
 		 
     		</script>
 
+</div>
 
 <! -- SERVICE SECTION -->
 	<section id="contact" name="contact"></section>
@@ -295,18 +324,21 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
-					<p>CONTACT</p>
+					<br/>
+					<br/>
+					<p>LES LUNES CONTACT</p>
 					<p></p>
 					<p>
 						<small>Tel. 510.813.3730<br/>
 						Tel. 707.479.3325<br/>
 						Mail. contact@lesluneswine.com<br/></small>
 					</p>
+					<br/>
+					<br/>
 		</div><! --/row -->
 		</div><!-- /container -->
 	</div>
 
-	
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
