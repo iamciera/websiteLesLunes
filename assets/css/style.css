@@ -271,9 +271,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Added with Mike to fix spacing */
 
+
+#LesLunesWine {
+    height:450px;
+    width:550px;
+}
+
 @media all and (max-width: 991px) {
     #headerwrap  { min-height: 0 }
-    #menu { display: none }
+    /*#menu { display: none }*/
+    #LesLunesWine { 
+    	width: 100%;
+    }
 }
 
 #headerwrap h1 {
