@@ -255,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-align:center;
 	background-attachment: relative;
 	background-position: center center;
-	min-height: 700px;
+	min-height: 500px;
 	width: 100%;
 	
     -webkit-background-size: 100%;
@@ -267,6 +267,13 @@ h1, h2, h3, h4, h5, h6 {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+/* Added with Mike to fix spacing */
+
+@media all and (max-width: 991px) {
+    #headerwrap  { min-height: 0 }
+    #menu { display: none }
 }
 
 #headerwrap h1 {
